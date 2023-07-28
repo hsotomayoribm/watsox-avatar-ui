@@ -1,0 +1,43 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: react-ui
+  name: react-ui
+  namespace: <namespace>
+spec:
+  selector:
+    matchLabels:
+      app: react-ui
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: react-ui
+    spec:
+      volumes:
+        - name: react-configmap-volume
+          configMap:
+            name: react-configmap
+      containers:
+        - image: <image>
+          name: react-ui
+          volumeMounts:
+            - name: react-configmap-volume
+              mountPath: /app/.env
+              subPath: deploy.env
+          ports:
+            - containerPort: 443
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: react-ui
+spec:
+  selector:
+    app: react-ui
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 443

@@ -1,0 +1,15 @@
+.container {
+  position: 'absolute';
+  bottom: '4%';
+  right: '6.5%';
+  z-index: 200;
+}
+
+.lowspeed {
+  color: red;
+  font-weight: 800;
+}
+
+.highspeed {
+  color: blue;
+}

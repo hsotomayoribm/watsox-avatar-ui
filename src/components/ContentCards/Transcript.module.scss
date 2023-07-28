@@ -1,0 +1,58 @@
+//box 
+$boxHeight: 350px;
+$boxWidth: 350px;
+
+//border
+$borderThickness: 7px;
+$borderColor: tomato;
+
+//animation speed
+$transition: .2s;
+
+//set to color behind box
+$backgroundColor: #fff;
+  
+.box {
+  margin: 50px auto;
+  height: $boxHeight;
+  width: $boxWidth;
+  position: relative;  
+  background: url(http://placehold.it/500x500);
+  background-size: cover;
+  
+  //Magic happens below...
+  box-shadow: 
+    $boxWidth+$borderThickness $boxHeight+($borderThickness*2) 0 $borderThickness $backgroundColor,
+    (($boxWidth+$borderThickness)*-1) (($boxHeight+($borderThickness*2))*-1) 0 $borderThickness $backgroundColor,
+    0 0 0 $borderThickness $borderColor;
+  transition: $transition $transition*.9;
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    height: $borderThickness;
+    width: 0%; 
+    background: $backgroundColor;
+    transition: $transition;
+  }
+  &:before {
+    top: -$borderThickness;
+    right: -$borderThickness;
+  }
+  &:after {
+    bottom: -$borderThickness;
+    left: -$borderThickness;
+  }
+  &:hover {
+    box-shadow:
+      $boxWidth+$borderThickness $borderThickness 0 $borderThickness $backgroundColor,
+      (($boxWidth+$borderThickness)*-1) (-$borderThickness) 0 $borderThickness $backgroundColor,
+      0 0 0 $borderThickness $borderColor;
+    transition: $transition;
+    &:after,
+    &:before {
+      width: $boxWidth+$borderThickness;
+      transition: $transition $transition*.9;
+    }
+  }
+}

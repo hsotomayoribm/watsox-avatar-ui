@@ -1,0 +1,12 @@
+{
+  "id": "options",
+  "data": {
+    "options": [
+      {
+        "label": "Show Link.",
+        "value": "show link"
+      }
+    ]
+  },
+  "type": "options"
+}

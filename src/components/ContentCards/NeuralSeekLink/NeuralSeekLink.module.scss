@@ -1,0 +1,15 @@
+.container {
+  & > * {
+    // margin: 1rem;
+    padding: 1rem;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.5);
+    border: solid 5px rgba(57,57,57,1);
+    transition: all 0.2s;
+  }
+  & > *:hover {
+    box-shadow: 0.4rem 0.8rem 0.8rem rgba(0, 0, 0, 0.3);
+  }
+  & a {
+    color: rgba(57,57,57,1) !important;
+  }
+}

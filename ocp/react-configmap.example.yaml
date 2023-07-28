@@ -1,0 +1,19 @@
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: v1
+data:
+  deploy.env: |
+    REACT_APP_ORCHESTRATION_MODE=true
+    NODE_ENV=dev
+    PORT=443
+    ESLINT_NO_DEV_ERRORS=true
+    REACT_APP_PROD=false
+    REACT_APP_ORCHESTRATION_URL=<Orchestration Server Route>
+    REACT_APP_API_KEY=<Soul Machine API Key>
+    REACT_APP_PROXY_SERVER=<Proxy Server Route>
+    REACT_APP_PREVIEW_LINK_BACKUP='https://cos-sm-truist.s3.us-east.cloud-object-storage.appdomain.cloud/IBM_logo%C2%AE_pos_RGB.gif'
+kind: ConfigMap
+metadata:
+  name: react-configmap
+  namespace: <namespace>
