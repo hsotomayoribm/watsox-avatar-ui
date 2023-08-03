@@ -1,33 +1,3 @@
-Skip to content
- Enterprise
-Search or jump to…
-Pull requests
-Issues
-Explore
- 
-@hsotomayor 
-cust-care-solution-eng
-/
-sm-neuralseek-ibm
-Public
-forked from David-Levy/sm-neuralseek-ibm
-1
-0
-8
-Code
-Pull requests
-Projects
-Wiki
-Security
-Insights
-sm-neuralseek-ibm/react-ui/Dockerfile
-
-Bob Fang dockerized for code engine
-Latest commit 4802ee7 29 days ago
- History
- 1 contributor
-50 lines (36 sloc)  1.06 KB
-   
 # pull the base image
 FROM node:16 as base
 USER root
@@ -78,12 +48,3 @@ ENV HOME="/home/watson"
 EXPOSE 3000
 
 CMD ["npm", "run", "serve"]
-© 2023 GitHub, Inc.
-Help
-Support
-API
-Training
-Blog
-About
-GitHub Enterprise Server 3.3.19
-Loading complete
