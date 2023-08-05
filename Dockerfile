@@ -20,7 +20,7 @@ ENV REACT_APP_API_KEY='eyJzb3VsSWQiOiJkZG5hLWlibS1lbmFibGVtZW50LWJvb3RjYW1wLS1pY
 ENV REACT_APP_ORCHESTRATION_MODE=true
 ##ENV REACT_APP_PROXY_SERVER=
 ## ENV REACT_APP_PREVIEW_LINK_BACKUP='https://www.ibm.com/design/language/877b208e9d05b37650a70e55867861bd/core_gray60_on_white.svg'
-
+ENV REACT_APP_ORCHESTRATION_URL="https://watsonx-avatar-proxy.15fjwevzgqlg.us-south.codeengine.appdomain.cloud"
 ENV PORT=3000
 
 ENV ESLINT_NO_DEV_ERRORS=false
