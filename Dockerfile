@@ -16,9 +16,9 @@ COPY . /code
 
 ENV NODE_ENV production
 
-## ENV REACT_APP_API_KEY=
-## ENV REACT_APP_ORCHESTRATION_MODE=true
-## ENV REACT_APP_PROXY_SERVER=
+ENV REACT_APP_API_KEY='eyJzb3VsSWQiOiJkZG5hLWlibS1lbmFibGVtZW50LWJvb3RjYW1wLS1pYm0tYm90IiwiYXV0aFNlcnZlciI6Imh0dHBzOi8vZGguc291bG1hY2hpbmVzLmNsb3VkL2FwaS9qd3QiLCJhdXRoVG9rZW4iOiJhcGlrZXlfdjFfNWMzNzFkMGYtYTk2Zi00NmJkLTk0MmUtZjhlMDQ2YjM2NmU4In0='
+ENV REACT_APP_ORCHESTRATION_MODE=true
+##ENV REACT_APP_PROXY_SERVER=
 ## ENV REACT_APP_PREVIEW_LINK_BACKUP='https://www.ibm.com/design/language/877b208e9d05b37650a70e55867861bd/core_gray60_on_white.svg'
 
 ENV PORT=3000
@@ -46,17 +46,6 @@ RUN adduser --system watson --ingroup watson
 
 RUN npm i -g pm2
 
-# Create app directory
-WORKDIR /home/watson
-
-# Copy the built application
-COPY --from=builder --chown=app:0 ["/code", "/home/watson"]
-
-RUN chmod -R 777 /home/watson
-
-USER watson
-
-ENV HOME="/home/watson"
 
 EXPOSE 3000
 
